@@ -1,0 +1,32 @@
+// ================================================================================================
+// ./src/styles/_reset.scss
+// Emporer Reset
+// ================================================================================================
+
+html {
+  @include box-sizing(border-box);
+
+  font-family: $f__default--serif;
+  font-size: $f__default--pixel_size;
+  font-size: $f__default--size;
+  font-weight: $f__default--weight;
+  line-height: $f__default--line;
+
+  color: $f__default--color;
+
+  background: $c__background--app;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  position: relative;
+  padding: 0;
+  background: none;
+}
+
+body {
+  background: $c__background--app;
+}
+

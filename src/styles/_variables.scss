@@ -1,0 +1,65 @@
+// ================================================================================================
+// ./src/styles/_variables.scss
+// Emporer Variables
+// ================================================================================================
+
+/* 
+ * Colors
+ */
+
+// Brand
+$c__primary: #533D66;
+$c__secondary: #5296A5;
+
+$c__danger: #B73333;
+$c__warning: #D38434;
+$c__success: #60A542;
+
+// Greyscale
+$c__white: #FFFFFF;
+$c__white--o: #F9F9F7;
+
+$c__grey--l: #D4D4D2;
+$c__grey: #898987;
+$c__grey--d: #4C4C4A;
+
+$c__black: #1D1E1C;
+
+// App
+$c__background--nav: $c__white;
+$c__background--app: $c__white--o;
+
+$c__border: $c__grey--l;
+
+
+/* 
+ * Fonts
+ */
+
+$f__weight--normal: 400;
+$f__weight--bold: 700;
+$f__weight--black: 800;
+
+$f__default--serif: "Crimson Text", "Times New Roman", "Times", serif;
+$f__default--sans-serif: "Open Sans", "Roboto", "San Francisco", "Helvetica", "Arial", sans-serif;
+$f__default--color: $c__black;
+$f__default--pixel_size: 16px;
+$f__default--size: 1rem;
+$f__default--line: 1.6;
+$f__default--weight: $f__weight--normal;
+$f__default--color: $c__black;
+
+
+/* 
+ * Animations
+ */
+
+$a__timing: 250ms;
+
+/* 
+ * Size
+ */
+
+$s__max-width: 1280px;
+$s__navigation--height: 54px;
+

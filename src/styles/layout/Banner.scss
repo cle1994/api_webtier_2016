@@ -1,0 +1,24 @@
+// ================================================================================================
+// ./src/styles/layout/Banner.scss
+// Banner Wrapper
+// ================================================================================================
+
+div.banner {
+  width: 100%;
+  max-width: $s__max-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4%;
+  background: none;
+
+  @media (min-width: 880px) {
+    margin-bottom: 2.5%;
+  }
+
+  @media (min-width: $s__max-width) {
+    @include border-radius(3px);
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+  }
+}
+

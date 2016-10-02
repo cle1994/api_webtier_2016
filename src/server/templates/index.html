@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    ${ meta }
+    ${ title }
+
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700,700i|Open+Sans:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+    <% if (environment === 'development') { %>
+    <script>
+      localStorage.debug = 'client:*';
+    </script>
+    <% } %>
+  </head>
+  <body>
+    <div id="root">${ html }</div>
+
+    <!-- Boostrap -->
+    <script>
+      window.__INITIAL_STATE__ = ${ JSON.stringify(initialState) };
+    </script>
+    <script src="/static/bundle.js"></script>
+  </body>
+</html>
+

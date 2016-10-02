@@ -1,0 +1,92 @@
+// ================================================================================================
+// ./src/styles/components/Navigation.scss
+// Navigation Styles
+// ================================================================================================
+
+div.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: $s__navigation--height;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  background: $c__white;
+  border-bottom: 1px solid $c__border;
+
+  .nav__bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    max-width: $s__max-width;
+    margin: 0 auto;
+
+    .nav__wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &.nav--left {
+        justify-content: flex-start;
+      }
+
+      &.nav--right {
+        margin-left: auto;
+        justify-content: flex-end;
+      }
+    }
+
+    .nav__item {
+      font-family: $f__default--sans-serif;
+
+      &.nav__item--logo {
+        height: 0.7 * $s__navigation--height;
+        width: 0.7 * $s__navigation--height;
+        margin-right: 8px;
+      }
+
+      &.nav__item--brand {
+        margin-right: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $c__primary;
+      }
+
+      &.nav__item--link {
+        margin-left: 24px;
+        font-size: 14px;
+        font-size: 0.875rem;
+        color: $c__grey;
+        
+        transition: color 250ms;
+
+        &:hover {
+          color: $c__primary;
+        }
+      }
+
+      &.nav__item--btn {
+        @include border-radius(50px);
+        margin-left: 24px;
+        padding: 8px 24px;
+        border: 1px solid $c__primary;
+        color: $c__primary;
+        line-height: 1;
+        cursor: pointer;
+
+        transition: background $a__timing, color $a__timing;
+
+        &:hover {
+          color: $c__white;
+          background: $c__primary;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,54 @@
+// ================================================================================================
+// ./src/styles/layout/Documentation.scss
+// Documentation Wrapper
+// ================================================================================================
+
+.page.page--documentation {
+  padding: 16px;
+
+  .title {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .endpoint {
+    margin-bottom: 36px;
+
+    .route {
+      color: $c__secondary;
+    }
+
+    .desc {
+      .method {
+        letter-spacing: 1px;
+        color: $c__primary;
+      }
+
+      .title {
+        margin-top: 20px;
+      }
+
+      .params {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid $c__secondary;
+
+        tr {
+          th {
+            text-align: left;
+            background: $c__secondary;
+            padding: 4px;
+            color: $c__white;
+            font-weight: normal;
+          }
+
+          td {
+            padding: 4px;
+            border: 1px solid $c__secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
