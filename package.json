@@ -74,6 +74,7 @@
   "author": "Christian Le <cle1994>",
   "private": true,
   "dependencies": {
+    "airbnb-js-shims": "^1.0.1",
     "axios": "^0.13.1",
     "bluebird": "^3.4.1",
     "boom": "^4.1.0",
@@ -122,7 +123,7 @@
     "enzyme": "^2.4.1",
     "eslint": "^3.3.1",
     "eslint-config-airbnb": "^10.0.1",
-    "eslint-import-resolver-babel-root-import": "git+https://github.com/cle1994/eslint-import-resolver-babel-root-import.git",
+    "eslint-import-resolver-babel-root-import": "https://github.com/cle1994/eslint-import-resolver-babel-root-import.git",
     "eslint-loader": "^1.5.0",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-import": "^1.14.0",

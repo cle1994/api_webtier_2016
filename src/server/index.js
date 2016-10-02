@@ -23,7 +23,7 @@ const serveDir = env === 'development' ? 'src' : 'dist';
 
 const server = new Server();
 server.connection({
-  port: 3000
+  port: 3001
 });
 
 
@@ -77,6 +77,17 @@ try {
   logger.error(error);
   process.exit(1); // eslint-disable-line no-process-exit
 }
+
+// Static file route
+server.route({
+  method: 'GET',
+  path: '/static/{file*}',
+  handler: {
+    directory: {
+      path: path.resolve(__dirname, '..', '..', serveDir, 'static')
+    }
+  }
+});
 
 // API Routes
 server.route(routes);
