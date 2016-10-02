@@ -23,7 +23,10 @@ const serveDir = env === 'development' ? 'src' : 'dist';
 
 const server = new Server();
 server.connection({
-  port: 3001
+  port: 8000,
+  routes: {
+    cors: true
+  }
 });
 
 
