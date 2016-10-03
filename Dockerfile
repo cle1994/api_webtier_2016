@@ -22,7 +22,7 @@ RUN npm rebuild node-sass
 RUN npm run build
 
 # Expose port 3000 for app
-EXPOSE 3001
+EXPOSE 8000
 
 # Start node app
 CMD [ "npm", "start" ]
