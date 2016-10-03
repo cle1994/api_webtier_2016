@@ -18,6 +18,19 @@ function routeGenerator(route) {
 // Contact Route
 const formRequirements = ['name', 'email', 'message'];
 const contact = {
+  config: {
+    cors: {
+      origin: ['*'],
+      headers: [
+        'Accept',
+        'Accept-Language',
+        'Authorization',
+        'Content-Language',
+        'Content-Type',
+        'If-None-Match'
+      ]
+    }
+  },
   method: 'post',
   path: routeGenerator('contact'),
   handler: (request, reply) => {
