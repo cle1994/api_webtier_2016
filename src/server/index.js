@@ -9,6 +9,7 @@ process.env.BROWSER = null;
 const logger = require('+/logger')('server:index');
 
 import bootstrapClient from '@/bootstrapClient';
+import cors from 'hapi-cors';
 import inert from 'inert';
 import good from 'good';
 import hapiWebpackPlugin from 'hapi-webpack-plugin';
@@ -55,6 +56,9 @@ const hapiPlugins = [
       }
     }
   },
+  {
+    register: cors
+  },
   inert
 ];
 
@@ -100,7 +104,7 @@ server.ext('onPreResponse', (request, reply) => {
   const response = request.response;
 
   if (response.statusCode) {
-    if (response.source.error) {
+    if (response.source && response.source.error) {
       const boomMethod = response.source.boom;
       const message = response.source.message;
       const data = response.source.data;
