@@ -1,9 +1,12 @@
-FROM node:6.6.0-slim
+FROM node:7.7.2-slim
 
 MAINTAINER Christian Le <christianle94@gmail.com>
 
 RUN apt-get update
 RUN apt-get install git -y
+
+# Install Yarn
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # Copy over app
 RUN mkdir -p /usr/src/app
@@ -16,8 +19,7 @@ WORKDIR /usr/src/app
 RUN rm -rf node_modules
 
 # Install npm packages
-RUN npm install
-RUN npm install -g better-npm-run
+RUN yarn install --force
 RUN npm rebuild node-sass
 RUN npm run build
 
