@@ -14,9 +14,14 @@ function routeGenerator(route) {
   return `/${API_VERSION}/${route}`;
 }
 
-
 // Contact Route
-const formRequirements = ['name', 'email', 'message'];
+const formRequirements = ['first', 'last', 'phone', 'email'];
+const formRequirementRegex = {
+  'first': /^[a-zA-Z]+$/,
+  'last': /^[a-zA-Z]+$/,
+  'phone': /^\(\d{3}\)\-\d{3}-\d{4}$/,
+  'email': /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+};
 const contact = {
   config: {
     cors: {
@@ -49,31 +54,35 @@ const contact = {
 
     const payloadKeys = _.keys(payload);
     let missingKeys = [];
+    let badKeys = [];
     for (let key of formRequirements) {
       if (payloadKeys.indexOf(key) < 0) {
         missingKeys.push(key);
+      } else if (!formRequirementRegex[key].exec(payload[key])) {
+        badKeys.push(key);
       }
     }
-    if (missingKeys.length > 0) {
+    if (missingKeys.length > 0 || badKeys.length > 0) {
       return reply({
         error: true,
         boom: boom.badRequest,
-        message: 'Missing parameters',
+        message: 'Missing or bad parameters',
         data: {
           requiredParams: formRequirements,
           missingParams: missingKeys,
+          badParams: badKeys,
           originalPayload: payload
         }
       });
     }
 
-    if (Math.random() > 0.75) {
+    if (Math.random() > 0.50) {
       return reply({
         error: true,
         boom: boom.badImplementation,
         message: 'Oops, you got unlucky :P',
         data: {
-          message: '15% of all requests fail just for fun :D'
+          message: '50% of all requests fail just for fun :D'
         }
       });
     }

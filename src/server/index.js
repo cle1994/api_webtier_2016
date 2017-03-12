@@ -97,6 +97,7 @@ server.route({
 });
 
 // API Routes
+console.log(routes);
 server.route(routes);
 
 // Catch dynamic requests and bootstrap React
@@ -118,11 +119,6 @@ server.ext('onPreResponse', (request, reply) => {
   }
 
   return bootstrapClient(request, reply);
-});
-
-// Watch and notify when server stops
-server.on('close', () => {
-  logger.info('==!> App as been closed.');
 });
 
 // Server Control
